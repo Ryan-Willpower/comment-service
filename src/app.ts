@@ -3,9 +3,10 @@ import { ApolloServer } from 'apollo-server'
 
 import { typeDefs } from './graphql/typedefs'
 import { resolvers } from './graphql/resolvers'
+import { context } from './graphql/context'
 
 export function start() {
-  const server = new ApolloServer({ typeDefs, resolvers })
+  const server = new ApolloServer({ typeDefs, resolvers, context })
 
   return server
 }
